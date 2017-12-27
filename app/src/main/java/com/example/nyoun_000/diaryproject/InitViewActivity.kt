@@ -1,32 +1,28 @@
-package com.example.nyoun_000.diaryproject.view.init_view
+package com.example.nyoun_000.diaryproject
 
 import android.os.Bundle
-import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
+import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import com.example.nyoun_000.diaryproject.R
-import com.example.nyoun_000.diaryproject.view.init_view.presenter.InitViewContract
-import com.example.nyoun_000.diaryproject.view.init_view.presenter.InitViewPresenter
-import kotlinx.android.synthetic.main.activity_init.*
-import kotlinx.android.synthetic.main.app_bar_init.*
+import kotlinx.android.synthetic.main.activity_init_view.*
+import kotlinx.android.synthetic.main.app_bar_init_view.*
 
-class InitViewActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, InitViewContract.View {
-    private lateinit var presenter: InitViewPresenter
-
+class InitViewActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_init)
+        setContentView(R.layout.activity_init_view)
         setSupportActionBar(toolbar)
 
-        presenter = InitViewPresenter().apply {
-            view = this@InitViewActivity
+        fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
         }
+
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
@@ -43,13 +39,12 @@ class InitViewActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         }
     }
 
-    //오른쪽 옵션 메뉴 만들어주는 부분
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.init, menu)
+        menuInflater.inflate(R.menu.init_view, menu)
         return true
     }
-    //오른쪽 옵션 메뉴 클릭 이벤트
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -60,7 +55,6 @@ class InitViewActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         }
     }
 
-    //왼쪽 옵션 메뉴 클릭 이벤트
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
@@ -86,8 +80,5 @@ class InitViewActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
-    }
-    fun onAddDiaryClicked(v : View){
-        Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show()
     }
 }

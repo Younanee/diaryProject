@@ -19,6 +19,10 @@
         <activity
             android:name=".view.init_view.InitViewActivity"
             android:label="@string/title_activity_init"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".InitViewActivity"
+            android:label="@string/title_activity_init_view"
             android:theme="@style/AppTheme"></activity>
     </application>
 

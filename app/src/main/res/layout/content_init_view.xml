@@ -5,7 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.nyoun_000.diaryproject.view.init_view.InitViewActivity"
-    tools:showIn="@layout/app_bar_init">
+    tools:context="com.example.nyoun_000.diaryproject.InitViewActivity"
+    tools:showIn="@layout/app_bar_init_view">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 </android.support.constraint.ConstraintLayout>

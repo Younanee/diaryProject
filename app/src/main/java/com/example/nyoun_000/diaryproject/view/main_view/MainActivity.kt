@@ -6,8 +6,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.TranslateAnimation
+import com.example.nyoun_000.diaryproject.InitViewActivity
 import com.example.nyoun_000.diaryproject.R
-import com.example.nyoun_000.diaryproject.view.init_view.InitViewActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
